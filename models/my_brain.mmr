@@ -1,0 +1,1297 @@
+{
+  "version": "1.4",
+  "model_type": "LogicChain",
+  "parameters": {
+    "weight": 2.0,
+    "temperature": 5.0,
+    "attention": 10.0,
+    "dynamic_temp_enabled": true,
+    "pain_words": [
+      "боль",
+      "больно",
+      "опасно",
+      "страх",
+      "ужас",
+      "вред",
+      "опасность",
+      "опыт"
+    ]
+  },
+  "brain": {
+    "associations": {
+      "Привет": {
+        "здарова": 16.0
+      },
+      "мясцо": {
+        "бекон": 16.0,
+        "полезно": 19.0
+      },
+      "бекон": {
+        "вкусно": 16.0,
+        "полезно": 20.0
+      },
+      "вкусно": {
+        "полезно": 16.0
+      },
+      "шар": {
+        "геометрия": 20.0,
+        "круглый": 16.0
+      },
+      "жизнь": {
+        "человек": 17.0,
+        "растение": 24.0,
+        "гриб": 16.0
+      },
+      "спички": {
+        "огонь": 13.75,
+        "полезно": 18.6533203125,
+        "питательно": 19.25
+      },
+      "огонь": {
+        "пожар": 12.5,
+        "еда": 21.25,
+        "полезно": 7.125,
+        "опыт": 14.0
+      },
+      "еда": {
+        "мясцо": 10.0,
+        "бургер": 15.0,
+        "полезно": 10.0
+      },
+      "бургер": {
+        "питательно": 13.0
+      },
+      "камень": {
+        "добыча": 10.0,
+        "полезно": 16.0
+      },
+      "добыча": {
+        "мясцо": 10.0
+      },
+      "река": {
+        "камень": 10.0,
+        "полезно": 15.167200088500977,
+        "рыба": 10.0,
+        "раки": 15.0,
+        "опыт": 15.5
+      },
+      "рыба": {
+        "мясцо": 10.0,
+        "щука": 15.0
+      },
+      "раки": {
+        "боль": 4.5,
+        "мясцо": 10.0
+      },
+      "боль": {
+        "опыт": 2.175
+      },
+      "пожар": {
+        "боль": 3.0
+      },
+      "щука": {
+        "боль": 2.25,
+        "опыт": 0.7,
+        "много-мясца": 15.0
+      },
+      "много-мясца": {
+        "очень-полезно": 10.0
+      },
+      "джунгли": {
+        "опасно": 0.425,
+        "боль": 17.5,
+        "опыт": 18.9003515625,
+        "кокосы": 15.0,
+        "питательно": 20.0
+      },
+      "кокосы": {
+        "еда": 10.0
+      }
+    },
+    "memory_log": [
+      {
+        "type": "association",
+        "from": "Привет",
+        "to": "здарова",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8.0
+      },
+      {
+        "type": "association",
+        "from": "Привет",
+        "to": "здарова",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8.0
+      },
+      {
+        "type": "association",
+        "from": "мясцо",
+        "to": "бекон",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8.0
+      },
+      {
+        "type": "association",
+        "from": "бекон",
+        "to": "вкусно",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8.0
+      },
+      {
+        "type": "association",
+        "from": "вкусно",
+        "to": "полезно",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8.0
+      },
+      {
+        "type": "association",
+        "from": "мясцо",
+        "to": "полезно",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8.0
+      },
+      {
+        "type": "praise",
+        "from": "мясцо",
+        "to": "полезно",
+        "old_strength": 16.0,
+        "new_strength": 24.0
+      },
+      {
+        "type": "association",
+        "from": "мясцо",
+        "to": "полезно",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8.0
+      },
+      {
+        "type": "association",
+        "from": "шар",
+        "to": "геометрия",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8.0
+      },
+      {
+        "type": "association",
+        "from": "шар",
+        "to": "круглый",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8.0
+      },
+      {
+        "type": "association",
+        "from": "шар",
+        "to": "круглый",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8.0
+      },
+      {
+        "type": "praise",
+        "from": "шар",
+        "to": "геометрия",
+        "old_strength": 16.0,
+        "new_strength": 24.0
+      },
+      {
+        "type": "association",
+        "from": "шар",
+        "to": "геометрия",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8.0
+      },
+      {
+        "type": "association",
+        "from": "жизнь",
+        "to": "человек",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8.0
+      },
+      {
+        "type": "association",
+        "from": "жизнь",
+        "to": "растение",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8.0
+      },
+      {
+        "type": "association",
+        "from": "жизнь",
+        "to": "гриб",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8.0
+      },
+      {
+        "type": "association",
+        "from": "жизнь",
+        "to": "гриб",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8.0
+      },
+      {
+        "type": "praise",
+        "from": "жизнь",
+        "to": "человек",
+        "old_strength": 16.0,
+        "new_strength": 24.0
+      },
+      {
+        "type": "praise",
+        "from": "жизнь",
+        "to": "растение",
+        "old_strength": 16.0,
+        "new_strength": 24.0
+      },
+      {
+        "type": "association",
+        "from": "жизнь",
+        "to": "гриб",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8.0
+      },
+      {
+        "type": "association",
+        "from": "жизнь",
+        "to": "человек",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "бекон",
+        "to": "полезно",
+        "strength": 20.0,
+        "attention": 20.0,
+        "weight": 2.0,
+        "temperature": 10
+      },
+      {
+        "type": "association",
+        "from": "мясцо",
+        "to": "полезно",
+        "strength": 18.0,
+        "attention": 18.0,
+        "weight": 2.0,
+        "temperature": 9
+      },
+      {
+        "type": "association",
+        "from": "спички",
+        "to": "огонь",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "спички",
+        "to": "огонь",
+        "strength": 20.0,
+        "attention": 20.0,
+        "weight": 2.0,
+        "temperature": 10
+      },
+      {
+        "type": "association",
+        "from": "огонь",
+        "to": "пожар",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "огонь",
+        "to": "еда",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "praise",
+        "from": "огонь",
+        "to": "еда",
+        "old_strength": 10.0,
+        "new_strength": 15.0
+      },
+      {
+        "type": "association",
+        "from": "еда",
+        "to": "мясцо",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "спички",
+        "to": "полезно",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8
+      },
+      {
+        "type": "association",
+        "from": "еда",
+        "to": "бургер",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "бургер",
+        "to": "питательно",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "огонь",
+        "to": "пожар",
+        "strength": 20.0,
+        "attention": 20.0,
+        "weight": 2.0,
+        "temperature": 10
+      },
+      {
+        "type": "praise",
+        "from": "огонь",
+        "to": "еда",
+        "old_strength": 15.0,
+        "new_strength": 22.5
+      },
+      {
+        "type": "association",
+        "from": "спички",
+        "to": "полезно",
+        "strength": 18.0,
+        "attention": 18.0,
+        "weight": 2.0,
+        "temperature": 9
+      },
+      {
+        "type": "association",
+        "from": "огонь",
+        "to": "полезно",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "спички",
+        "to": "полезно",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8
+      },
+      {
+        "type": "association",
+        "from": "спички",
+        "to": "полезно",
+        "strength": 20.0,
+        "attention": 20.0,
+        "weight": 2.0,
+        "temperature": 10
+      },
+      {
+        "type": "association",
+        "from": "огонь",
+        "to": "еда",
+        "strength": 20.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "correction",
+        "input": "огонь",
+        "wrong": "полезно",
+        "correct": "еда",
+        "attention": 10.0
+      },
+      {
+        "type": "association",
+        "from": "спички",
+        "to": "полезно",
+        "strength": 18.0,
+        "attention": 18.0,
+        "weight": 2.0,
+        "temperature": 9
+      },
+      {
+        "type": "association",
+        "from": "спички",
+        "to": "огонь",
+        "strength": 20.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "correction",
+        "input": "спички",
+        "wrong": "полезно",
+        "correct": "огонь",
+        "attention": 10.0
+      },
+      {
+        "type": "association",
+        "from": "спички",
+        "to": "полезно",
+        "strength": 18.0,
+        "attention": 18.0,
+        "weight": 2.0,
+        "temperature": 9
+      },
+      {
+        "type": "association",
+        "from": "спички",
+        "to": "полезно",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8
+      },
+      {
+        "type": "association",
+        "from": "спички",
+        "to": "полезно",
+        "strength": 22.0,
+        "attention": 22.0,
+        "weight": 2.0,
+        "temperature": 11
+      },
+      {
+        "type": "association",
+        "from": "бургер",
+        "to": "питательно",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8
+      },
+      {
+        "type": "association",
+        "from": "еда",
+        "to": "бургер",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "еда",
+        "to": "полезно",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5
+      },
+      {
+        "type": "praise",
+        "from": "еда",
+        "to": "бургер",
+        "old_strength": 10.0,
+        "new_strength": 15.0
+      },
+      {
+        "type": "association",
+        "from": "спички",
+        "to": "полезно",
+        "strength": 20.0,
+        "attention": 20.0,
+        "weight": 2.0,
+        "temperature": 10
+      },
+      {
+        "type": "association",
+        "from": "камень",
+        "to": "добыча",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "добыча",
+        "to": "мясцо",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "камень",
+        "to": "полезно",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "камень",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 12.0,
+        "attention": 12.0,
+        "weight": 2.0,
+        "temperature": 6
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "рыба",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "рыба",
+        "to": "мясцо",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 18.0,
+        "attention": 18.0,
+        "weight": 2.0,
+        "temperature": 9
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "раки",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "раки",
+        "to": "боль",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "боль",
+        "to": "опыт",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 18.0,
+        "attention": 18.0,
+        "weight": 2.0,
+        "temperature": 9
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 14.0,
+        "attention": 14.0,
+        "weight": 2.0,
+        "temperature": 7
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8
+      },
+      {
+        "type": "praise",
+        "from": "река",
+        "to": "раки",
+        "old_strength": 10.0,
+        "new_strength": 15.0
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 14.0,
+        "attention": 14.0,
+        "weight": 2.0,
+        "temperature": 7
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "опыт",
+        "strength": 18.0,
+        "attention": 18.0,
+        "weight": 2.0,
+        "temperature": 9
+      },
+      {
+        "type": "association",
+        "from": "огонь",
+        "to": "пожар",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "пожар",
+        "to": "боль",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "спички",
+        "to": "питательно",
+        "strength": 20.0,
+        "attention": 20.0,
+        "weight": 2.0,
+        "temperature": 10
+      },
+      {
+        "type": "association",
+        "from": "спички",
+        "to": "питательно",
+        "strength": 18.0,
+        "attention": 18.0,
+        "weight": 2.0,
+        "temperature": 9
+      },
+      {
+        "type": "association",
+        "from": "спички",
+        "to": "питательно",
+        "strength": 18.0,
+        "attention": 18.0,
+        "weight": 2.0,
+        "temperature": 9
+      },
+      {
+        "type": "association",
+        "from": "спички",
+        "to": "питательно",
+        "strength": 20.0,
+        "attention": 20.0,
+        "weight": 2.0,
+        "temperature": 10
+      },
+      {
+        "type": "association",
+        "from": "огонь",
+        "to": "полезно",
+        "strength": 14.0,
+        "attention": 14.0,
+        "weight": 2.0,
+        "temperature": 7
+      },
+      {
+        "type": "pain_avoidance",
+        "from": "пожар",
+        "to": "боль",
+        "old_strength": 10.0,
+        "new_strength": 3.0
+      },
+      {
+        "type": "association",
+        "from": "огонь",
+        "to": "опыт",
+        "strength": 14.0,
+        "attention": 14.0,
+        "weight": 2.0,
+        "temperature": 7
+      },
+      {
+        "type": "association",
+        "from": "раки",
+        "to": "мясцо",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "praise",
+        "from": "раки",
+        "to": "боль",
+        "old_strength": 10.0,
+        "new_strength": 15.0
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "опыт",
+        "strength": 18.0,
+        "attention": 18.0,
+        "weight": 2.0,
+        "temperature": 9
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8
+      },
+      {
+        "type": "pain_avoidance",
+        "from": "раки",
+        "to": "боль",
+        "old_strength": 15.0,
+        "new_strength": 4.5
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "опыт",
+        "strength": 12.0,
+        "attention": 12.0,
+        "weight": 2.0,
+        "temperature": 6
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 14.0,
+        "attention": 14.0,
+        "weight": 2.0,
+        "temperature": 7
+      },
+      {
+        "type": "association",
+        "from": "рыба",
+        "to": "щука",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "щука",
+        "to": "боль",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 14.0,
+        "attention": 14.0,
+        "weight": 2.0,
+        "temperature": 7
+      },
+      {
+        "type": "praise",
+        "from": "рыба",
+        "to": "щука",
+        "old_strength": 10.0,
+        "new_strength": 15.0
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 12.0,
+        "attention": 12.0,
+        "weight": 2.0,
+        "temperature": 6
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 14.0,
+        "attention": 14.0,
+        "weight": 2.0,
+        "temperature": 7
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 18.0,
+        "attention": 18.0,
+        "weight": 2.0,
+        "temperature": 9
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 14.0,
+        "attention": 14.0,
+        "weight": 2.0,
+        "temperature": 7
+      },
+      {
+        "type": "association",
+        "from": "щука",
+        "to": "опыт",
+        "strength": 14.0,
+        "attention": 14.0,
+        "weight": 2.0,
+        "temperature": 7
+      },
+      {
+        "type": "association",
+        "from": "щука",
+        "to": "боль",
+        "strength": 20.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "correction",
+        "input": "щука",
+        "wrong": "опыт",
+        "correct": "боль",
+        "attention": 10.0
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 14.0,
+        "attention": 14.0,
+        "weight": 2.0,
+        "temperature": 7
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 18.0,
+        "attention": 18.0,
+        "weight": 2.0,
+        "temperature": 9
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 12.0,
+        "attention": 12.0,
+        "weight": 2.0,
+        "temperature": 6
+      },
+      {
+        "type": "pain_avoidance",
+        "from": "щука",
+        "to": "боль",
+        "old_strength": 7.5,
+        "new_strength": 2.25
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "опыт",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8
+      },
+      {
+        "type": "association",
+        "from": "щука",
+        "to": "много-мясца",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "много-мясца",
+        "to": "очень-полезно",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "praise",
+        "from": "щука",
+        "to": "много-мясца",
+        "old_strength": 10.0,
+        "new_strength": 15.0
+      },
+      {
+        "type": "association",
+        "from": "река",
+        "to": "полезно",
+        "strength": 16.0,
+        "attention": 16.0,
+        "weight": 2.0,
+        "temperature": 8
+      },
+      {
+        "type": "association",
+        "from": "джунгли",
+        "to": "опасно",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "джунгли",
+        "to": "опасно",
+        "strength": 24.0,
+        "attention": 24.0,
+        "weight": 2.0,
+        "temperature": 12
+      },
+      {
+        "type": "association",
+        "from": "джунгли",
+        "to": "боль",
+        "strength": 20.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "correction",
+        "input": "джунгли",
+        "wrong": "опасно",
+        "correct": "боль",
+        "attention": 10.0
+      },
+      {
+        "type": "association",
+        "from": "джунгли",
+        "to": "опыт",
+        "strength": 18.0,
+        "attention": 18.0,
+        "weight": 2.0,
+        "temperature": 9
+      },
+      {
+        "type": "association",
+        "from": "джунгли",
+        "to": "боль",
+        "strength": 20.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "correction",
+        "input": "джунгли",
+        "wrong": "опыт",
+        "correct": "боль",
+        "attention": 10.0
+      },
+      {
+        "type": "association",
+        "from": "джунгли",
+        "to": "опыт",
+        "strength": 20.0,
+        "attention": 20.0,
+        "weight": 2.0,
+        "temperature": 10
+      },
+      {
+        "type": "praise",
+        "from": "джунгли",
+        "to": "боль",
+        "old_strength": 10.0,
+        "new_strength": 15.0
+      },
+      {
+        "type": "association",
+        "from": "джунгли",
+        "to": "опыт",
+        "strength": 22.0,
+        "attention": 22.0,
+        "weight": 2.0,
+        "temperature": 11
+      },
+      {
+        "type": "association",
+        "from": "джунгли",
+        "to": "боль",
+        "strength": 20.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "correction",
+        "input": "джунгли",
+        "wrong": "опыт",
+        "correct": "боль",
+        "attention": 10.0
+      },
+      {
+        "type": "association",
+        "from": "джунгли",
+        "to": "опыт",
+        "strength": 22.0,
+        "attention": 22.0,
+        "weight": 2.0,
+        "temperature": 11
+      },
+      {
+        "type": "association",
+        "from": "джунгли",
+        "to": "опыт",
+        "strength": 20.0,
+        "attention": 20.0,
+        "weight": 2.0,
+        "temperature": 10
+      },
+      {
+        "type": "association",
+        "from": "боль",
+        "to": "опыт",
+        "strength": 12.0,
+        "attention": 12.0,
+        "weight": 2.0,
+        "temperature": 6
+      },
+      {
+        "type": "pain_avoidance",
+        "from": "боль",
+        "to": "опыт",
+        "old_strength": 7.25,
+        "new_strength": 2.175
+      },
+      {
+        "type": "association",
+        "from": "джунгли",
+        "to": "опыт",
+        "strength": 20.0,
+        "attention": 20.0,
+        "weight": 2.0,
+        "temperature": 10
+      },
+      {
+        "type": "association",
+        "from": "джунгли",
+        "to": "кокосы",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "кокосы",
+        "to": "еда",
+        "strength": 10.0,
+        "attention": 10.0,
+        "weight": 2.0,
+        "temperature": 5.0
+      },
+      {
+        "type": "association",
+        "from": "джунгли",
+        "to": "опыт",
+        "strength": 20.0,
+        "attention": 20.0,
+        "weight": 2.0,
+        "temperature": 10
+      },
+      {
+        "type": "association",
+        "from": "джунгли",
+        "to": "питательно",
+        "strength": 18.0,
+        "attention": 18.0,
+        "weight": 2.0,
+        "temperature": 9
+      },
+      {
+        "type": "praise",
+        "from": "джунгли",
+        "to": "кокосы",
+        "old_strength": 10.0,
+        "new_strength": 15.0
+      },
+      {
+        "type": "association",
+        "from": "джунгли",
+        "to": "питательно",
+        "strength": 22.0,
+        "attention": 22.0,
+        "weight": 2.0,
+        "temperature": 11
+      }
+    ],
+    "error_log": [
+      {
+        "input": "огонь",
+        "wrong": "полезно",
+        "correct": "еда",
+        "old_strength": 10.0,
+        "new_strength": 0.5,
+        "attention": 10.0
+      },
+      {
+        "input": "спички",
+        "wrong": "полезно",
+        "correct": "огонь",
+        "old_strength": 18.125,
+        "new_strength": 0.90625,
+        "attention": 10.0
+      },
+      {
+        "input": "щука",
+        "wrong": "опыт",
+        "correct": "боль",
+        "old_strength": 14.0,
+        "new_strength": 0.7,
+        "attention": 10.0
+      },
+      {
+        "input": "джунгли",
+        "wrong": "опасно",
+        "correct": "боль",
+        "old_strength": 17.0,
+        "new_strength": 0.85,
+        "attention": 10.0
+      },
+      {
+        "input": "джунгли",
+        "wrong": "опыт",
+        "correct": "боль",
+        "old_strength": 18.0,
+        "new_strength": 0.9,
+        "attention": 10.0
+      },
+      {
+        "input": "джунгли",
+        "wrong": "опыт",
+        "correct": "боль",
+        "old_strength": 16.225,
+        "new_strength": 0.81125,
+        "attention": 10.0
+      }
+    ]
+  }
+}
