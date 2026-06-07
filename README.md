@@ -18,3 +18,8 @@ This is an AI builded in a new technology of ML
 - ✅ Открывать Issue с вопросами
 
 **Хочешь использовать мою модель?** Напиши мне в Issues — я открыт к диалогу.
+
+
+## Автор: GorbovIvan
+## Лицензия: полная защита. Не украсть.
+## Копирайт: (c) 2026 GorbovIvan
